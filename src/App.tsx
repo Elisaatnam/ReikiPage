@@ -32,8 +32,10 @@ function App() {
         isTopOfPage={isTopOfPage}
       />
       <main>
-        <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-        <div className="h-screen"></div>
+        <Home />
+        <div className="h-screen flex items-center justify-center">
+          ...to be contiued...
+        </div>
       </main>
     </div>
   );

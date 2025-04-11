@@ -20,6 +20,10 @@
   --color-warning-content: oklch(98% 0.016 73.684);
   --color-error: #ff14b7;
   --color-error-content: oklch(97% 0.014 343.198);
+
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1060px;
 }
 
 html,
