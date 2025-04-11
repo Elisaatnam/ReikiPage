@@ -37,7 +37,11 @@ const Navbar = ({
               href="#home"
               onClick={() => setSelectedPage(SelectedPage.Start)}
             >
-              <img src="/logo.png" alt="Logo" className="w-24" />
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-18 md:w-28 h-auto object-contain"
+              />
             </AnchorLink>
 
             {/* inner right side */}
