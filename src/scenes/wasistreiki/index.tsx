@@ -1,51 +1,62 @@
-import HandsIcon from "@/assets/handIcon.png";
+import { ReikiInfoElt, SelectedPage } from "@/shared/types";
+import { motion } from "framer-motion";
+import { reikiInfosArr } from "./ReikiInfos";
+import ReikiCard from "./ReikiCard";
 
-function WasIstReiki() {
+type WasIstReikiProps = {
+  setSelectedPage: React.Dispatch<React.SetStateAction<SelectedPage>>;
+};
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 1,
+    },
+  },
+};
+
+function WasIstReiki({ setSelectedPage }: WasIstReikiProps) {
   return (
-    <section
+    <motion.section
       id="wasistreiki"
       className="flex flex-col gap-4 md:flex-row md:gap-16 pt-24 md:min-h-screen px-10 md:px-24"
+      onViewportEnter={() => setSelectedPage(SelectedPage.WasIstReiki)}
+      viewport={{ once: true, amount: 0.5 }}
     >
-      <article className="flex items-center justify-center basis-1/3">
+      <motion.article
+        className="flex items-center justify-center basis-1/3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.75 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      >
         <p className="text-xl">
           <span className="font-bold italic text-info">Reiki</span> ist eine
           sanfte, aus Japan stammende Energieheilungsmethode, die durch das
           Auflegen der Hände praktiziert wird.
         </p>
-      </article>
-      <article className="basis-2/3 grid sm:grid-cols-2 gap-4">
-        <div className="border-2 border-info rounded-lg p-4 flex flex-col items-center justify-evenly text-center bg-info-container hover:transform hover:scale-105 hover:z-10 transition-all duration-500 hover:bg-success">
-          <p className="h-52 flex items-center justify-center">
-            Beschreibe, wie die Energie dorthin fließt, wo sie im Körper des
-            Empfängers benötigt wird, um Blockaden zu lösen und das
-            Gleichgewicht wiederherzustellen
-          </p>
-          <img src={HandsIcon} alt="icon" className="h-40 w-auto" />
-        </div>
-        <div className="border-2 border-info rounded-lg p-4 flex flex-col items-center justify-evenly text-center bg-info-container hover:transform hover:scale-105 hover:z-10 transition-all duration-500 hover:bg-success">
-          <p className="h-52 flex items-center justify-center">
-            Weise darauf hin, dass die Erfahrungen mit Reiki sehr individuell
-            sein können.
-          </p>
-          <img src={HandsIcon} alt="icon" className="h-40 w-auto" />
-        </div>
-        <div className="border-2 border-info rounded-lg p-4 flex flex-col items-center justify-evenly text-center bg-info-container hover:transform hover:scale-105 hover:z-10 transition-all duration-500 hover:bg-success">
-          <p className="h-52 flex items-center justify-center">
-            Erkläre, dass Reiki für Menschen jeden Alters und in verschiedenen
-            Lebenssituationen geeignet ist.
-          </p>
-          <img src={HandsIcon} alt="icon" className="h-40 w-auto" />
-        </div>
-        <div className="border-2 border-info rounded-lg p-4 flex flex-col items-center justify-evenly text-center bg-info-container hover:transform hover:scale-105 hover:z-10 transition-all duration-500 hover:bg-success">
-          <p className="h-52 flex items-center justify-center">
-            Nenne Beispiele, wie Stress, Erschöpfung, Schlafprobleme, emotionale
-            Belastungen, Schmerzen oder einfach zur Förderung des allgemeinen
-            Wohlbefindens.
-          </p>
-          <img src={HandsIcon} alt="icon" className="h-40 w-auto" />
-        </div>
-      </article>
-    </section>
+      </motion.article>
+      <motion.article
+        className="basis-2/3 grid sm:grid-cols-2 gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={container}
+      >
+        {reikiInfosArr.map((elt: ReikiInfoElt) => (
+          <ReikiCard
+            key={elt.id}
+            description={elt.description}
+            icon={elt.icon}
+          />
+        ))}
+      </motion.article>
+    </motion.section>
   );
 }
 

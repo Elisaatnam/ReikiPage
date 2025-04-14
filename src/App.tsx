@@ -34,7 +34,7 @@ function App() {
       />
       <main>
         <Home setSelectedPage={setSelectedPage} />
-        <WasIstReiki />
+        <WasIstReiki setSelectedPage={setSelectedPage} />
         <div className="h-screen flex items-center justify-center">
           ...to be contiued...
         </div>

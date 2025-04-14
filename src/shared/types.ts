@@ -5,3 +5,9 @@ export enum SelectedPage {
   UeberMich = "uebermich",
   Kontakt = "kontakt",
 }
+
+export type ReikiInfoElt = {
+  description: string;
+  icon: string;
+  id: string;
+};
