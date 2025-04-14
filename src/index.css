@@ -14,6 +14,7 @@
   --color-neutral-content: oklch(98% 0.002 247.839);
   --color-info: #00b69d;
   --color-info-content: oklch(97% 0.013 236.62);
+  --color-info-container: #00b59d4f;
   --color-success: #00d29f;
   --color-success-content: oklch(97% 0.021 166.113);
   --color-warning: #c1564c;

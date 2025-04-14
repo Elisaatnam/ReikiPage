@@ -3,6 +3,7 @@ import Navbar from "@/scenes/navbar";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "./shared/types";
 import Home from "./scenes/home";
+import WasIstReiki from "./scenes/wasistreiki";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -32,7 +33,8 @@ function App() {
         isTopOfPage={isTopOfPage}
       />
       <main>
-        <Home />
+        <Home setSelectedPage={setSelectedPage} />
+        <WasIstReiki />
         <div className="h-screen flex items-center justify-center">
           ...to be contiued...
         </div>
