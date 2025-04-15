@@ -20,12 +20,12 @@ function WasIstReiki({ setSelectedPage }: WasIstReikiProps) {
   return (
     <motion.section
       id="wasistreiki"
-      className="flex flex-col gap-4 md:flex-row md:gap-16 pt-24 md:min-h-screen px-10 md:px-24"
+      className="flex flex-col gap-4 px-10 pt-24 md:min-h-screen md:flex-row md:gap-16 md:px-24"
       onViewportEnter={() => setSelectedPage(SelectedPage.WasIstReiki)}
       viewport={{ once: true, amount: 0.5 }}
     >
       <motion.article
-        className="flex items-center justify-center basis-1/3"
+        className="flex basis-1/3 items-center justify-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -36,13 +36,13 @@ function WasIstReiki({ setSelectedPage }: WasIstReikiProps) {
         }}
       >
         <p className="text-xl">
-          <span className="font-bold italic text-info">Reiki</span> ist eine
+          <span className="text-info font-bold italic">Reiki</span> ist eine
           sanfte, aus Japan stammende Energieheilungsmethode, die durch das
           Auflegen der Hände praktiziert wird.
         </p>
       </motion.article>
       <motion.article
-        className="basis-2/3 grid sm:grid-cols-2 gap-4"
+        className="grid basis-2/3 gap-4 sm:grid-cols-2"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}

@@ -31,7 +31,7 @@ const Navbar = ({
         className={`${flexBetween} fixed top-0 z-30 w-full ${navBarBG} transition-colors duration-500`}
       >
         {/* left side */}
-        <div className={`${flexBetween} mx-auto w-5/6 `}>
+        <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             <AnchorLink
               href="#home"
@@ -40,13 +40,13 @@ const Navbar = ({
               <img
                 src="/logo.png"
                 alt="Logo"
-                className="w-18 md:w-28 h-auto object-contain"
+                className="h-auto w-18 object-contain md:w-28"
               />
             </AnchorLink>
 
             {/* inner right side */}
             {isAboveMediumScreens ? (
-              <div className={`${flexBetween} justify-end w-full`}>
+              <div className={`${flexBetween} w-full justify-end`}>
                 <div className={`${flexBetween} gap-8 text-base`}>
                   <Link
                     page={"Was ist Reiki"}
@@ -70,7 +70,7 @@ const Navbar = ({
               </div>
             ) : (
               <button
-                className="rounded-full bg-accent p-3"
+                className="bg-accent rounded-full p-3"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
                 <Bars3Icon className="h-6 w-6 text-white" />
@@ -83,15 +83,15 @@ const Navbar = ({
       {/* //: ----- mobile menu modal ----- */}
       {!isAboveMediumScreens && (
         <div
-          className={`fixed right-0 bottom-0 z-40 h-full w-[275px] bg-base-300 drop-shadow-xl transition-transform duration-500 ${isMenuToggled ? "translate-x-0" : "translate-x-full"}`}
+          className={`bg-base-300 fixed right-0 bottom-0 z-40 h-full w-[275px] drop-shadow-xl transition-transform duration-500 ${isMenuToggled ? "translate-x-0" : "translate-x-full"}`}
         >
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <XMarkIcon className="h-10 w-10 text-primary-content" />
+              <XMarkIcon className="text-primary-content h-10 w-10" />
             </button>
           </div>
 
-          <div className="flex flex-col gap-10 text-2xl text-accent-content ml-[25%]">
+          <div className="text-accent-content ml-[25%] flex flex-col gap-10 text-2xl">
             <Link
               page={"Was ist Reiki"}
               selectedPage={selectedPage}

@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { SelectedPage } from "./shared/types";
 import Home from "./scenes/home";
 import WasIstReiki from "./scenes/wasistreiki";
+import About from "./scenes/about";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Start
+    SelectedPage.Start,
   );
 
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -35,9 +36,10 @@ function App() {
       <main>
         <Home setSelectedPage={setSelectedPage} />
         <WasIstReiki setSelectedPage={setSelectedPage} />
-        <div className="h-screen flex items-center justify-center">
+        <div className="flex h-screen items-center justify-center">
           ...to be contiued...
         </div>
+        <About setSelectedPage={setSelectedPage} />
       </main>
     </div>
   );

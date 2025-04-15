@@ -10,22 +10,22 @@ type HomeProps = {
 function Home({ setSelectedPage }: HomeProps) {
   return (
     <motion.section
-      className="md:h-screen md:pb-0 py-16 md:py-24"
+      className="py-16 md:h-screen md:py-24 md:pb-0"
       id="home"
       onViewportEnter={() => setSelectedPage(SelectedPage.Start)}
       viewport={{ once: true, amount: 0.5 }}
     >
-      <div className=" h-full md:flex">
+      <div className="h-full md:flex">
         {/* Image */}
         <div className="basis-1/2">
           <img
             src={HeroImage}
             alt="Eine Person erhält eine Reiki-Behandlung"
-            className="md:h-full md:object-cover md:object-center w-full mb-10"
+            className="mb-10 w-full md:h-full md:object-cover md:object-center"
           />
         </div>
 
-        <div className="basis-1/2 flex flex-col items-center justify-center gap-12 px-4 text-center md:px-10">
+        <div className="flex basis-1/2 flex-col items-center justify-center gap-12 px-4 text-center md:px-10">
           <motion.h1
             className="text-xl md:text-4xl"
             initial="hidden"

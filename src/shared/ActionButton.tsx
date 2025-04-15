@@ -9,7 +9,7 @@ type ActionButtonProps = {
 function ActionButton({ children, setSelectedPage }: ActionButtonProps) {
   return (
     <AnchorLink
-      className="rounded-lg bg-neutral text-neutral-content px-10 py-3 hover:bg-info  duration-500 transition"
+      className="bg-neutral text-neutral-content hover:bg-info rounded-lg px-10 py-3 transition duration-500"
       onClick={() => setSelectedPage(SelectedPage.Kontakt)}
       href={`#${SelectedPage.Kontakt}`}
     >

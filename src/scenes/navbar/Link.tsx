@@ -13,13 +13,13 @@ function Link({ page, selectedPage, setSelectedPage }: LinkProps) {
     .replace(
       /[äöüß]/g,
       (match: string) =>
-        ({ ä: "ae", ö: "oe", ü: "ue", ß: "ss" })[match] || match
+        ({ ä: "ae", ö: "oe", ü: "ue", ß: "ss" })[match] || match,
     )
     .replace(/ /g, "") as SelectedPage;
 
   return (
     <AnchorLink
-      className={`${selectedPage === lowerCasePage ? "text-secondary " : ""} transition duration-500 hover:text-info`}
+      className={`${selectedPage === lowerCasePage ? "text-secondary" : ""} hover:text-info transition duration-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
