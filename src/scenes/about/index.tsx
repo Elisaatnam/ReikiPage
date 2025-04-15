@@ -9,7 +9,7 @@ type AboutProps = {
 function About({ setSelectedPage }: AboutProps) {
   return (
     <motion.section
-      id="about"
+      id="uebermich"
       className="relative min-h-screen overflow-clip"
       onViewportEnter={() => setSelectedPage(SelectedPage.UeberMich)}
       viewport={{ once: true, amount: 0.5 }}
