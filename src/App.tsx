@@ -2,9 +2,10 @@ import Navbar from "@/scenes/navbar";
 
 import { useEffect, useState } from "react";
 import { SelectedPage } from "./shared/types";
-import Home from "./scenes/home";
-import WasIstReiki from "./scenes/wasistreiki";
-import About from "./scenes/about";
+import Home from "@/scenes/home";
+import WasIstReiki from "@/scenes/wasistreiki";
+import About from "@/scenes/about";
+import Contact from "@/scenes/contact";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -40,6 +41,7 @@ function App() {
           ...to be contiued...
         </div>
         <About setSelectedPage={setSelectedPage} />
+        <Contact setSelectedPage={setSelectedPage} />
       </main>
     </div>
   );
