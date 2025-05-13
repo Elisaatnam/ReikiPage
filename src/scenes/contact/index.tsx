@@ -61,29 +61,62 @@ function Contact({ setSelectedPage }: ContactProps) {
             target="_blank"
             onSubmit={handleSubmit}
             method="POST"
-            action="https://formsubmit.co/elisa.stueker@googlemail.com"
+            action="hier muss deine email adresse rein!, dann bekommst du eine besteaetigungsmail und dannach kommt hier der anonyme link rein"
           >
             <input
               type="text"
-              className="bg-info text-base-100 mb-4 w-full rounded-lg px-4 py-2"
+              className="bg-info text-base-100 w-full rounded-lg px-4 py-2"
               placeholder="Dein Name"
+              {...register("name", {
+                required: true,
+                maxLength: 100,
+              })}
             />
+            {errors.name && (
+              <p className="text-warning text-sm">
+                {errors.name.type === "required" &&
+                  "Dieses Feld ist erforderlich."}
+                {errors.name.type === "maxLength" &&
+                  "Maximale Länge ist 100 Zeichen."}
+              </p>
+            )}
             <input
               type="email"
-              name="email"
-              placeholder="Email"
-              className="bg-info text-base-100 mb-4 w-full rounded-lg px-4 py-2"
+              placeholder="Deine E-Mail"
+              className="bg-info text-base-100 mt-4 w-full rounded-lg px-4 py-2"
+              {...register("email", {
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              })}
             />
+            {errors.email && (
+              <p className="text-warning text-sm">
+                {errors.email.type === "required" &&
+                  "Dieses Feld ist erforderlich."}
+                {errors.email.type === "pattern" && "Ungültige E-Mail-Adresse."}
+              </p>
+            )}
             <textarea
-              name="message"
-              className="bg-info text-base-100 mb-4 w-full rounded-lg px-4 py-2"
+              className="bg-info text-base-100 mt-4 w-full rounded-lg px-4 py-2"
               placeholder="Deine Nachricht"
               rows={4}
               cols={50}
+              {...register("message", {
+                required: true,
+                maxLength: 2000,
+              })}
             />
+            {errors.message && (
+              <p className="text-warning text-sm">
+                {errors.message.type === "required" &&
+                  "Dieses Feld ist erforderlich."}
+                {errors.message.type === "maxLength" &&
+                  "Maximale Länge ist 2000 Zeichen."}
+              </p>
+            )}
             <button
               type="submit"
-              className="bg-info text-neutral-content hover:bg-accent cursor-pointer rounded-lg px-4 py-2 transition duration-500 hover:scale-105 hover:transform"
+              className="bg-info text-neutral-content hover:bg-accent mt-4 cursor-pointer rounded-lg px-4 py-2 transition duration-500 hover:scale-105 hover:transform"
             >
               Senden
             </button>
