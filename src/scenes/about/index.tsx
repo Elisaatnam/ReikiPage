@@ -1,16 +1,27 @@
 import { motion } from "framer-motion";
 import SideProfile from "@/assets/sideProfile.jpeg";
 import { SelectedPage } from "@/shared/types";
+import { meilensteine } from "./meilensteine";
+import Meilenstein from "./Meilenstein";
 
 type AboutProps = {
   setSelectedPage: React.Dispatch<React.SetStateAction<SelectedPage>>;
+};
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 1,
+    },
+  },
 };
 
 function About({ setSelectedPage }: AboutProps) {
   return (
     <motion.section
       id="uebermich"
-      className="relative min-h-max overflow-clip sm:min-h-screen"
+      className="relative min-h-max overflow-clip py-8 sm:min-h-screen"
       onViewportEnter={() => setSelectedPage(SelectedPage.UeberMich)}
       viewport={{ once: true, amount: 0.5 }}
     >
@@ -19,89 +30,25 @@ function About({ setSelectedPage }: AboutProps) {
         alt="Seitenprofil Jan Reiche"
         className="absolute h-full w-full object-cover object-left blur-md md:scale-125 md:object-center"
       />
-      <ol className="relative left-1/12 max-w-xs border-s border-gray-200 pt-12 pb-8 sm:left-1/5 sm:max-w-lg md:left-1/4 md:max-w-3xl dark:border-gray-700">
-        <li className="bg-neutral-content/50 p4 ms-4 mb-10 rounded-2xl p-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700"></div>
-          <time className="text-accent mb-1 text-sm leading-none font-normal">
-            Juni 2024
-          </time>
-          <h3 className="text-secondary text-lg font-semibold">
-            Meistergrad Reiki
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi
-            nam qui veniam exercitationem laborum dicta odit, omnis totam
-            libero, delectus beatae harum tempore doloribus dolorum nostrum. Ea,
-            facere quia!
-          </p>
-          {/* <a
-            href="#"
-            className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
-          >
-            optional ein Link...{" "}
-            <svg
-              className="ms-2 h-3 w-3 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a> */}
-        </li>
-        <li className="bg-neutral-content/50 p4 ms-4 mb-10 rounded-2xl p-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700"></div>
-          <time className="text-accent mb-1 text-sm leading-none font-normal">
-            Juni 2024
-          </time>
-          <h3 className="text-secondary text-lg font-semibold">
-            Meistergrad Reiki
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi
-            nam qui veniam exercitationem laborum dicta odit, omnis totam
-            libero, delectus beatae harum tempore doloribus dolorum nostrum. Ea,
-            facere quia!
-          </p>
-        </li>
-        <li className="bg-neutral-content/50 p4 ms-4 mb-10 rounded-2xl p-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700"></div>
-          <time className="text-accent mb-1 text-sm leading-none font-normal">
-            Juni 2024
-          </time>
-          <h3 className="text-secondary text-lg font-semibold">
-            Meistergrad Reiki
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi
-            nam qui veniam exercitationem laborum dicta odit, omnis totam
-            libero, delectus beatae harum tempore doloribus dolorum nostrum. Ea,
-            facere quia!
-          </p>
-        </li>
-        <li className="bg-neutral-content/50 p4 ms-4 mb-10 rounded-2xl p-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700"></div>
-          <time className="text-accent mb-1 text-sm leading-none font-normal">
-            Juni 2024
-          </time>
-          <h3 className="text-secondary text-lg font-semibold">
-            Meistergrad Reiki
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi
-            nam qui veniam exercitationem laborum dicta odit, omnis totam
-            libero, delectus beatae harum tempore doloribus dolorum nostrum. Ea,
-            facere quia!
-          </p>
-        </li>
-      </ol>
+      <h2 className="text-primary relative left-1/12 mb-4 text-3xl font-semibold sm:left-1/5 md:left-1/4">
+        Über mich
+      </h2>
+      <motion.ol
+        className="border-success relative left-1/12 max-w-xs border-s pt-12 pb-8 sm:left-1/5 sm:max-w-lg md:left-1/4 md:max-w-3xl"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={container}
+      >
+        {meilensteine.map((meilenstein) => (
+          <Meilenstein
+            key={meilenstein.beschreibung}
+            date={meilenstein.date}
+            beschreibung={meilenstein.beschreibung}
+            details={meilenstein.details}
+          />
+        ))}
+      </motion.ol>
     </motion.section>
   );
 }

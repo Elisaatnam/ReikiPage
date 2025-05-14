@@ -1,4 +1,4 @@
-import { behandlungen } from "@/shared/behandlungen";
+import { behandlungen } from "@/scenes/angebot/behandlungen";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import AngebotCard from "./AngebotCard";
