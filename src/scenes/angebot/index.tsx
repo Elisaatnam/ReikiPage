@@ -19,7 +19,7 @@ const container = {
 function Angebot({ setSelectedPage }: AngebotProps) {
   return (
     <motion.section
-      className="bg-base-200 flex min-h-[80vh] flex-col items-center justify-center gap-16"
+      className="bg-base-200 flex min-h-[80vh] flex-col items-center justify-center gap-16 py-8"
       id="angebot"
       onViewportEnter={() => setSelectedPage(SelectedPage.Angebot)}
       viewport={{ once: true, amount: 0.5 }}
