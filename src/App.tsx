@@ -7,6 +7,7 @@ import WasIstReiki from "@/scenes/wasistreiki";
 import About from "@/scenes/about";
 import Contact from "@/scenes/contact";
 import Angebot from "./scenes/angebot";
+import Footer from "./scenes/footer";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -42,6 +43,7 @@ function App() {
         <About setSelectedPage={setSelectedPage} />
         <Contact setSelectedPage={setSelectedPage} />
       </main>
+      <Footer />
     </div>
   );
 }
