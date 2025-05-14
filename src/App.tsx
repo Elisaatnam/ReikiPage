@@ -6,6 +6,7 @@ import Home from "@/scenes/home";
 import WasIstReiki from "@/scenes/wasistreiki";
 import About from "@/scenes/about";
 import Contact from "@/scenes/contact";
+import Angebot from "./scenes/angebot";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -37,9 +38,7 @@ function App() {
       <main>
         <Home setSelectedPage={setSelectedPage} />
         <WasIstReiki setSelectedPage={setSelectedPage} />
-        <div className="flex h-screen items-center justify-center">
-          ...to be contiued...
-        </div>
+        <Angebot setSelectedPage={setSelectedPage} />
         <About setSelectedPage={setSelectedPage} />
         <Contact setSelectedPage={setSelectedPage} />
       </main>

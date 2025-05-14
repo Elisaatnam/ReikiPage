@@ -20,7 +20,7 @@ function WasIstReiki({ setSelectedPage }: WasIstReikiProps) {
   return (
     <motion.section
       id="wasistreiki"
-      className="flex flex-col gap-4 px-10 pt-24 md:min-h-screen md:flex-row md:gap-16 md:px-24"
+      className="mb-24 flex flex-col gap-4 px-10 pt-24 md:min-h-screen md:flex-row md:gap-16 md:px-24"
       onViewportEnter={() => setSelectedPage(SelectedPage.WasIstReiki)}
       viewport={{ once: true, amount: 0.5 }}
     >
