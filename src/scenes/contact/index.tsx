@@ -26,7 +26,7 @@ function Contact({ setSelectedPage }: ContactProps) {
     <motion.section
       id="kontakt"
       onViewportEnter={() => setSelectedPage(SelectedPage.Kontakt)}
-      className="mx-auto min-h-screen w-5/6 pt-24 pb-32"
+      className="mx-auto w-5/6 pt-24 pb-32"
     >
       <motion.div
         initial="hidden"
