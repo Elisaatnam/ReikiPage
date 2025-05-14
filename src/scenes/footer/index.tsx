@@ -1,5 +1,3 @@
-import React from "react";
-
 function Footer() {
   return (
     <footer className="bg-accent">
@@ -10,18 +8,24 @@ function Footer() {
             className="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
           >
             <img src="/logo.png" className="h-10" alt="Logo" />
-            <span className="text-accent-content self-center text-2xl font-semibold whitespace-nowrap">
+            <span className="text-base-content self-center text-2xl font-semibold whitespace-nowrap">
               Gurujan
             </span>
           </a>
-          <ul className="text-secondary-content mb-6 flex flex-wrap items-center text-sm font-medium">
+          <ul className="text-base-content mb-6 flex flex-wrap items-center text-sm font-medium transition">
             <li>
-              <a href="#" className="me-4 hover:underline md:me-6">
+              <a
+                href="#"
+                className="hover:text-info duration-500-conten me-4 hover:underline md:me-6"
+              >
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="#" className="me-4 hover:underline md:me-6">
+              <a
+                href="#"
+                className="hover:text-info duration-500-conten me-4 hover:underline md:me-6"
+              >
                 Licensing
               </a>
             </li>
